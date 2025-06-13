@@ -1,0 +1,313 @@
+
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>MY PORTOFOLIO</title>
+  <style>
+    *, *::before, *::after {
+      box-sizing: border-box;
+    }
+    html {
+      scroll-behavior: smooth;
+    }
+    body {
+      margin: 0;
+      font-family: 'Inter', sans-serif;
+      background-color: #0b2239;
+      color: #e1eaf5;
+      line-height: 1.6;
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+    }
+    a {
+      color: #64b5f6;
+      text-decoration: none;
+      transition: color 0.3s ease;
+    }
+    a:hover, a:focus {
+      color: #90caf9;
+      outline: none;
+    }
+    header {
+      background-color: #08203a;
+      padding: 16px 32px;
+      position: sticky;
+      top: 0;
+      z-index: 100;
+      box-shadow: 0 2px 10px rgba(0,0,0,0.5);
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
+    .logo {
+      font-weight: 700;
+      font-size: 1.8rem;
+      letter-spacing: 2px;
+      user-select: none;
+      color: #a9c5f2;
+    }
+    nav {
+      display: flex;
+      gap: 24px;
+    }
+    nav a {
+      font-size: 1rem;
+      padding: 8px 12px;
+      border-radius: 8px;
+      transition: background-color 0.3s ease, color 0.3s ease;
+    }
+    nav a:hover,
+    nav a:focus {
+      background-color: #64b5f6;
+      color: #08203a;
+    }
+    main {
+      flex-grow: 1;
+      max-width: 1100px;
+      margin: 48px auto 64px;
+      padding: 0 24px;
+    }
+    section {
+      margin-bottom: 72px;
+      scroll-margin-top: 80px;
+    }
+    h1, h2, h3 {
+      margin-top: 0;
+      color: #a9c5f2;
+    }
+    h1 {
+      font-size: 2.8rem;
+      font-weight: 700;
+      margin-bottom: 16px;
+    }
+    h2 {
+      font-size: 2rem;
+      margin-bottom: 24px;
+    }
+    h3 {
+      font-size: 1.3rem;
+      margin-bottom: 12px;
+    }
+    p {
+      margin-bottom: 24px;
+      color: #ced9f1;
+    }
+
+    .hero {
+      margin-bottom: 64px;
+    }
+
+    .hero-content {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 32px;
+      flex-wrap: wrap;
+    }
+
+    .hero-img {
+      width: 360px;
+      height: 360px;
+      object-fit: cover;
+      border-radius: 16px;
+      box-shadow: 0 8px 16px rgba(0, 0, 0, 0.4);
+      flex-shrink: 0;
+    }
+
+    .hero-text {
+      max-width: 600px;
+      flex: 1;
+    }
+
+    .hero-text p {
+      font-size: 1.2rem;
+      color: #a9c5f2;
+    }
+
+    .btn-primary {
+      background-color: #64b5f6;
+      border: none;
+      padding: 14px 36px;
+      font-weight: 600;
+      font-size: 1.1rem;
+      border-radius: 12px;
+      color: #08203a;
+      cursor: pointer;
+      transition: background-color 0.3s ease;
+    }
+
+    .btn-primary:hover,
+    .btn-primary:focus {
+      background-color: #90caf9;
+    }
+
+    @media (max-width: 768px) {
+      .hero-content {
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+      }
+
+      .hero-text {
+        text-align: center;
+      }
+    }
+
+    .about-content {
+      max-width: 650px;
+      margin: 0 auto;
+      text-align: center;
+    }
+
+    .projects-grid {
+      display: grid;
+      gap: 24px;
+      grid-template-columns: 1fr;
+    }
+
+    .project-card {
+      background: #102c55;
+      border-radius: 16px;
+      padding: 24px;
+      box-shadow: 0 8px 16px rgba(10,30,60,0.4);
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+    }
+
+    .project-card:hover,
+    .project-card:focus-within {
+      transform: translateY(-6px);
+      box-shadow: 0 20px 35px rgba(100,181,246,0.45);
+    }
+
+    .project-title {
+      font-size: 1.4rem;
+      margin-bottom: 12px;
+      color: #a9c5f2;
+    }
+
+    .project-desc {
+      color: #c0d3f5;
+      font-size: 1rem;
+      margin-bottom: 16px;
+    }
+
+    .project-link {
+      font-weight: 600;
+      color: #64b5f6;
+    }
+
+    .project-link:hover,
+    .project-link:focus {
+      text-decoration: underline;
+    }
+
+    .contact-list {
+      max-width: 400px;
+      margin: 0 auto;
+      list-style: none;
+      padding: 0;
+      font-size: 1.1rem;
+    }
+
+    .contact-list li {
+      margin-bottom: 16px;
+    }
+
+    .contact-list a {
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+      color: #64b5f6;
+    }
+
+    .contact-list a svg {
+      width: 24px;
+      height: 24px;
+      fill: #64b5f6;
+    }
+
+    .contact-list a:hover svg {
+      fill: #90caf9;
+    }
+
+    footer {
+      background-color: #08203a;
+      color: #a9c5f2;
+      text-align: center;
+      padding: 16px 24px;
+      font-size: 0.9rem;
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <div class="logo" tabindex="0">Portofolio Rasya</div>
+    <nav role="navigation" aria-label="Navigasi utama">
+      <a href="#beranda">Beranda</a>
+      <a href="#tentang">Tentang</a>
+      <a href="#proyek">Proyek</a>
+      <a href="#kontak">Kontak</a>
+    </nav>
+  </header>
+
+  <main>
+    <section id="beranda" tabindex="-1" aria-label="Halaman beranda">
+      <div class="hero">
+        <div class="hero-content">
+          <img src="foto.jpg" alt="Foto Rasya Tri Noviandika" class="hero-img">
+          <div class="hero-text">
+            <h1>Halo, Saya Rasya Tri Noviandika</h1>
+            <p>Selamat datang di portofolio saya. Ini Website Portofolio pertama saya belum sebagus yang dibayangkan eheheh . Thank You Guysss :)</p>
+            <a href="#proyek" class="btn-primary">Lihat Proyek Saya</a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="tentang" tabindex="-1" aria-label="Halaman tentang saya">
+      <h2>Tentang Saya</h2>
+      <div class="about-content">
+        <p>Saya, Rasya Tri Noviandika, siswa SMKN 9 Bekasi jurusan Sistem Informatika, Jaringan, dan Aplikasi (SIJA), memiliki minat dan keahlian dalam bidang teknologi, pemrograman, dan jaringan komputer. Saya memiliki semangat belajar tinggi, cepat beradaptasi, dan berbekal pengetahuan teknis serta keterampilan praktis yang diperoleh di bangku SMK.</p>
+      </div>
+    </section>
+
+    <section id="proyek" tabindex="-1" aria-label="Halaman proyek">
+      <h2>Proyek Saya</h2>
+      <p>DISCLAIMER, Saya akan menaruh proyek kerja saya dan akan terus saya update tapi untuk kali ini baru satu ini aja</p>
+      <div class="projects-grid">
+        <article class="project-card">
+          <h3 class="project-title">Membuat Design UI UX Marketplace Jualan Makanan</h3>
+          <p class="project-desc">Desain UI/UX untuk marketplace khusus jualan makanan yang user friendly dan menarik.</p>
+          <a href="https://www.instagram.com/p/DKY6K_Mh9j6/?igsh=eHlqeWhjZXB5emp5" class="project-link" target="_blank" rel="noopener">Lihat di Instagram</a>
+        </article>
+      </div>
+    </section>
+
+
+    <section id="kontak" tabindex="-1" aria-label="Halaman kontak">
+      <h2>Kontak Saya</h2>
+      <ul class="contact-list">
+        <li>
+          <a href="https://www.instagram.com/rrasyatn" target="_blank" rel="noopener" aria-label="Instagram saya">
+            <svg viewBox="0 0 24 24"><path d="M7 2C4.243 2 2 4.243 2 7v10c0 2.757 2.243 5 5 5h10c2.757 0 5-2.243 5-5V7c0-2.757-2.243-5-5-5H7zM7 4h10c1.654 0 3 1.346 3 3v10c0 1.654-1.346 3-3 3H7c-1.654 0-3-1.346-3-3V7c0-1.654 1.346-3 3-3zm6 3a1 1 0 110 2 1 1 0 010-2zm-5 2a5 5 0 105 5 5.006 5.006 0 00-5-5zm0 2a3 3 0 11-3 3 3.004 3.004 0 013-3z"/></svg>
+            @Instagram
+          </a>
+        </li>
+        <li>
+          <a href="https://linkedin.com/in/rasyatrin" target="_blank" rel="noopener" aria-label="LinkedIn saya">
+            <svg viewBox="0 0 24 24"><path d="M20.447 20.452h-3.555v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.137 1.446-2.137 2.94v5.666h-3.555V9h3.414v1.561h.049c.476-.899 1.635-1.852 3.363-1.852 3.596 0 4.258 2.368 4.258 5.455v6.288zM5.337 7.433a2.063 2.063 0 11.001-4.126 2.063 2.063 0 010 4.126zM6.794 20.452H3.875V9h2.919zM22.225 0H1.771C.792 0 0 .774 0 1.727v20.546C0 23.225.792 24 1.771 24h20.451C23.208 24 24 23.225 24 22.273V1.727C24 .774 23.208 0 22.225 0z"/></svg>
+            @LinkedIn
+          </a>
+        </li>
+      </ul>
+    </section>
+  </main>
+
+  <footer>
+    &copy; Portofolio Rasya Tri Noviandika
+  </footer>
+</body>
+</html>
