@@ -450,7 +450,7 @@ section#kontak {
   }
 }
 
-/* #imageModal img,
+#imageModal img,
 #modalImg {
   max-width: 90vw;
   max-height: 80vh;
@@ -459,7 +459,7 @@ section#kontak {
   border-radius: 10px;
   box-shadow: 0 0 16px rgba(100,181,246,0.5);
   transition: transform 0.3s ease;
-} */
+}
 
 @media (max-width: 600px) {
   #imageModal img,
@@ -520,9 +520,21 @@ section#kontak {
   }
 }
 
+  #imageModal {
+    display: none;
+    position: fixed;
+    z-index: 9999;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    background: rgba(0, 0, 0, 0.85);
+    justify-content: center;
+    align-items: center;
+    padding: 10px;
+  }
 
-
-  /* #imageModal img {
+  #imageModal img {
     max-width: 90vw;
     max-height: 80vh;
     width: auto;
@@ -531,7 +543,7 @@ section#kontak {
     box-shadow: 0 0 16px rgba(100,181,246,0.6);
     display: block;
     margin: auto;
-  } */
+  }
 
   #closeModal {
     position: absolute;
@@ -556,6 +568,17 @@ section#kontak {
       font-size: 28px;
     }
   }
+
+  /* Sembunyikan tombol hamburger kalau slider aktif */
+.hide-hamburger,
+.hide-logo {
+  display: none !important;
+}
+
+.hide-header {
+  display: none !important;
+}
+
 
   </style>
 
@@ -695,7 +718,6 @@ document.addEventListener('DOMContentLoaded', () => {
       modalImg.style.height = '';
       modalImg.style.maxWidth = '90vw';
       modalImg.style.maxHeight = '80vh';
-      modalImg.style.objectFit = 'contain';
       modalImg.src = img.src;
       modal.style.display = 'flex';
     });
@@ -735,19 +757,33 @@ document.addEventListener('DOMContentLoaded', () => {
       const slider = document.getElementById('pemrograman-web-slider');
       const closeBtn = slider.querySelector('.close-slider-btn');
 
-      function openSlider() {
-        slider.style.display = 'block';
-        slider.setAttribute('aria-hidden', 'false');
-        pemrogramanCard.setAttribute('aria-expanded', 'true');
-        slider.focus();
-      }
+   function openSlider() {
+  slider.style.display = 'block';
+  slider.setAttribute('aria-hidden', 'false');
+  pemrogramanCard.setAttribute('aria-expanded', 'true');
+  slider.focus();
 
-      function closeSlider() {
-        slider.style.display = 'none';
-        slider.setAttribute('aria-hidden', 'true');
-        pemrogramanCard.setAttribute('aria-expanded', 'false');
-        pemrogramanCard.focus();
-      }
+  const navMenu = document.getElementById('navMenu');
+  if (navMenu.classList.contains('active')) {
+    navMenu.classList.remove('active');
+  }
+
+  document.getElementById('menuToggle').classList.add('hide-hamburger');
+  document.querySelector('.logo').classList.add('hide-logo');
+  document.querySelector('header').classList.add('hide-header'); // ⬅️ ini
+}
+
+ function closeSlider() {
+  slider.style.display = 'none';
+  slider.setAttribute('aria-hidden', 'true');
+  pemrogramanCard.setAttribute('aria-expanded', 'false');
+  pemrogramanCard.focus();
+
+  document.getElementById('menuToggle').classList.remove('hide-hamburger');
+  document.querySelector('.logo').classList.remove('hide-logo');
+  document.querySelector('header').classList.remove('hide-header'); // ⬅️ ini
+}
+
 
       pemrogramanCard.addEventListener('click', openSlider);
 
@@ -757,6 +793,9 @@ document.addEventListener('DOMContentLoaded', () => {
           openSlider();
         }
       });
+
+      const hamburger = document.getElementById('menuToggle');
+hamburger.classList.remove('hide-hamburger');
 
       closeBtn.addEventListener('click', closeSlider);
       closeBtn.addEventListener('keydown', (e) => {
@@ -782,9 +821,16 @@ document.addEventListener('DOMContentLoaded', () => {
   const toggleBtn = document.getElementById('menuToggle');
   const nav = document.getElementById('navMenu');
 
-  toggleBtn.addEventListener('click', () => {
-    nav.classList.toggle('active');
-  });
+ toggleBtn.addEventListener('click', () => {
+  nav.classList.toggle('active');
+
+  // Tambahan: kontrol display untuk show/hide
+  if (nav.classList.contains('active')) {
+    nav.style.display = 'flex';
+  } else {
+    nav.style.display = 'none';
+  }
+});
 });
     </script>
 </body>
