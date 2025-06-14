@@ -2,6 +2,7 @@
 <html lang="id">
 <head>
   <meta charset="UTF-8" />
+  <link rel="stylesheet" href="rasya_responsive_patch.css">
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>MY PORTOFOLIO</title>
   <style>
@@ -9,8 +10,9 @@
       box-sizing: border-box;
     }
     html {
-      scroll-behavior: smooth;
-    }
+  scroll-padding-top: 80px;
+}
+
     body {
       margin: 0;
       font-family: 'Inter', sans-serif;
@@ -31,35 +33,58 @@
       outline: none;
     }
     header {
-      background-color: #08203a;
-      padding: 16px 32px;
-      position: sticky;
-      top: 0;
-      z-index: 100;
-      box-shadow: 0 2px 10px rgba(0,0,0,0.5);
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-    }
-    .logo {
-      font-weight: 700;
-      font-size: 1.8rem;
-      letter-spacing: 2px;
-      user-select: none;
-      color: #a9c5f2;
-    }
-    nav {
-      display: flex;
-      gap: 24px;
-    }
-    nav a {
-      font-size: 1rem;
-      padding: 8px 12px;
-      border-radius: 8px;
-      transition: background-color 0.3s ease, color 0.3s ease;
-      cursor: pointer;
-      position: relative;
-    }
+  background: #08203a;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 16px;
+  position: sticky;
+  top: 0;
+  z-index: 9999;
+}
+.logo {
+  color: #a9c5f2;
+  font-weight: bold;
+  font-size: 1.3rem;
+}
+nav {
+  display: flex;
+  gap: 20px;
+}
+.menu-toggle {
+  display: none;
+  background: none;
+  border: none;
+  font-size: 24px;
+  color: #64b5f6;
+  cursor: pointer;
+}
+@media (max-width: 768px) {
+  nav {
+    display: none;
+    flex-direction: column;
+    background-color: #08203a;
+    width: 100%;
+    position: absolute;
+    top: 60px;
+    left: 0;
+    padding: 10px 0;
+    border-top: 1px solid #1c3a5f;
+  }
+  nav a {
+    padding: 10px;
+    text-align: center;
+    border-bottom: 1px solid #123456;
+    display: block;
+  }
+  nav.active {
+    display: flex;
+  }
+  .menu-toggle {
+    display: block;
+  }
+}
+
     nav a:hover,
     nav a:focus {
       background-color: #64b5f6;
@@ -193,7 +218,7 @@
       transform: translateY(-8px);
       box-shadow: 0 20px 40px rgba(100,181,246,0.5);
     }
-  .project-card img {
+    .project-card img {
   max-width: 100%;
   border-radius: 12px;
   margin-bottom: 8px;
@@ -262,13 +287,12 @@
       filter: drop-shadow(0 0 3px rgba(100,181,246,0.5));
       transition: transform 0.3s ease, filter 0.3s ease;
     }
-    .certificate-slide:hover img,
-    .certificate-slide:focus-within img {
-      transform: scale(1.05) rotate(1.2deg);
-      filter: drop-shadow(0 0 8px rgba(100,181,246,0.85));
-      cursor: zoom-in;
-      outline: none;
-    }
+    .certificate-slide img:hover {
+  transform: scale(1.05) rotate(1.2deg);
+  filter: drop-shadow(0 0 8px rgba(100,181,246,0.85));
+  cursor: zoom-in;
+}
+
     /* Button to close slider */
     .close-slider-btn {
       background: transparent;
@@ -329,19 +353,227 @@ section#kontak {
   text-align: center;
 }
 
+@media (max-width: 600px) {
+  nav {
+    flex-direction: column;
+    align-items: center;
+    padding: 10px 0;
+  }
+  nav a {
+    display: block;
+    padding: 8px 0;
+    width: 100%;
+    text-align: center;
+    background-color: #0b2239;
+    border-bottom: 1px solid #123456;
+  }
+}
+
+@media (max-width: 768px) {
+  .hero-content {
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+  }
+
+  .hero-img {
+  width: 200px;
+  height: 200px;
+  border-radius: 50%;
+  object-fit: cover;
+  box-shadow: 0 0 16px #64b5f6;
+}
+
+
+
+  .hero-text {
+    padding: 0 10px;
+    text-align: center;
+  }
+  .projects-grid {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 24px;
+  }
+  .project-card {
+    width: 90%;
+  }
+  nav {
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 10px;
+  }
+  nav a {
+    display: inline-block;
+    padding: 8px 12px;
+  }
+  footer {
+    padding: 16px 8px;
+    font-size: 0.8rem;
+  }
+}
+
+@media (max-width: 600px) {
+  .certificate-slider {
+    padding: 12px;
+    overflow-x: auto;
+  }
+
+  .certificate-track {
+    flex-wrap: nowrap;
+    gap: 12px;
+  }
+
+  .certificate-slide {
+    min-width: 200px;
+    max-width: 220px;
+    padding: 12px;
+  }
+
+  .certificate-slide img {
+    max-width: 100%;
+    height: auto;
+    object-fit: contain;
+    border-radius: 10px;
+  }
+
+  .certificate-slide h3 {
+    font-size: 1rem;
+    margin-top: 8px;
+  }
+
+  .close-slider-btn {
+    font-size: 0.95rem;
+    padding: 8px 16px;
+    margin-top: 8px;
+  }
+}
+
+/* #imageModal img,
+#modalImg {
+  max-width: 90vw;
+  max-height: 80vh;
+  width: auto;
+  height: auto;
+  border-radius: 10px;
+  box-shadow: 0 0 16px rgba(100,181,246,0.5);
+  transition: transform 0.3s ease;
+} */
+
+@media (max-width: 600px) {
+  #imageModal img,
+  #modalImg {
+    max-width: 90vw;
+    max-height: 70vh;
+  }
+
+  #imageModal {
+    padding: 10px;
+    justify-content: center;
+    align-items: center;
+  }
+
+  #closeModal {
+    top: 12px;
+    right: 14px;
+    font-size: 28px;
+  }
+}
+
+
+@media (hover: none) {
+  .certificate-slide img:hover {
+    transform: none;
+    filter: none;
+  }
+}
+
+ .certificate-slide img:hover {
+    transform: scale(1.05) rotate(1.2deg);
+    filter: drop-shadow(0 0 8px rgba(100,181,246,0.85));
+    cursor: zoom-in;
+  }
+
+  @media (hover: none) {
+    .certificate-slide img:hover {
+      transform: none;
+      filter: none;
+    }
+  }
+
+  @media (max-width: 768px) {
+  nav {
+    display: none;
+    flex-direction: column;
+    background-color: #08203a;
+    width: 100%;
+    position: absolute;
+    top: 60px;
+    left: 0;
+    padding: 10px 0;
+    border-top: 1px solid #1c3a5f;
+    overflow: hidden; /* Tambahkan ini */
+  }
+  nav.active {
+    display: flex;
+  }
+}
+
+
+
+  /* #imageModal img {
+    max-width: 90vw;
+    max-height: 80vh;
+    width: auto;
+    height: auto;
+    border-radius: 12px;
+    box-shadow: 0 0 16px rgba(100,181,246,0.6);
+    display: block;
+    margin: auto;
+  } */
+
+  #closeModal {
+    position: absolute;
+    top: 16px;
+    right: 20px;
+    font-size: 36px;
+    color: white;
+    font-weight: bold;
+    cursor: pointer;
+    z-index: 10000;
+  }
+
+  @media (max-width: 600px) {
+    #imageModal img {
+      max-width: 90vw;
+      max-height: 70vh;
+    }
+
+    #closeModal {
+      top: 12px;
+      right: 14px;
+      font-size: 28px;
+    }
+  }
+
   </style>
+
 </head>
 <body>
-  <header>
-    <div class="logo" tabindex="0">Portofolio Rasya</div>
-    <nav role="navigation" aria-label="Navigasi utama">
-      <a href="#beranda" class="nav-link">Beranda</a>
-      <a href="#tentang" class="nav-link">Tentang</a>
-      <a href="#proyek" class="nav-link">Proyek</a>
-      <a href="#sertifikat" class="nav-link">Sertifikat</a>
-      <a href="#kontak" class="nav-link">Kontak</a>
-    </nav>
-  </header>
+<header>
+  <div class="logo">Portofolio Rasya</div>
+  <button class="menu-toggle" id="menuToggle">&#9776;</button>
+  <nav id="navMenu">
+    <a href="#beranda">Beranda</a>
+    <a href="#tentang">Tentang</a>
+    <a href="#proyek">Proyek</a>
+    <a href="#sertifikat">Sertifikat</a>
+    <a href="#kontak">Kontak</a>
+  </nav>
+</header>
+
+
 
   <main>
     <section id="beranda" tabindex="-1" aria-label="Halaman beranda">
@@ -350,34 +582,34 @@ section#kontak {
           <img src="foto.jpg" alt="Foto Rasya Tri Noviandika" class="hero-img" tabindex="0" />
           <div class="hero-text">
             <h1>Halo, Saya Rasya Tri Noviandika</h1>
-            <p>Selamat datang di portofolio saya. Ini Website Portofolio pertama saya belum sebagus yang dibayangkan eheheh. Thank You Guysss :)</p>
-            <a href="#proyek" class="btn-primary">Lihat Proyek Saya</a>
+            <p>Portofolio ini adalah representasi awal dari perjalanan saya di bidang teknologi, pemrograman, dan desain.</p>
+            <a href="#proyek" class="btn-primary">My Projects</a>
           </div>
         </div>
       </div>
     </section>
 
     <section id="tentang" tabindex="-1" aria-label="Halaman tentang saya">
-      <h2>Tentang Saya</h2>
+      <h2>About me</h2>
       <div class="about-content">
         <p>Saya, Rasya Tri Noviandika, siswa SMKN 9 Bekasi jurusan Sistem Informatika, Jaringan, dan Aplikasi (SIJA), memiliki minat dan keahlian dalam bidang teknologi, pemrograman, dan jaringan komputer. Saya memiliki semangat belajar tinggi, cepat beradaptasi, dan berbekal pengetahuan teknis serta keterampilan praktis yang diperoleh di bangku SMK.</p>
       </div>
     </section>
 
     <section id="proyek" tabindex="-1" aria-label="Halaman proyek">
-      <h2>Proyek </h2>
-      <p>DISCLAIMER, Saya akan menaruh proyek kerja saya dan akan terus saya update tapi untuk kali ini baru satu ini aja</p>
+      <h2>Projects </h2>
+      <p>DISCLAIMER, Saya akan menaruh Projects saya dan akan terus saya update tapi untuk kali ini baru satu ini aja</p>
       <div class="projects-grid">
         <article class="project-card" tabindex="0">
           <h3 class="project-title">UI/UX Marketplace Makanan</h3>
           <p>Desain marketplace jualan makanan.</p>
-          <a href="https://www.instagram.com/p/DKY6K_Mh9j6/?igsh=eHlqeWhjZXB5emp5" target="_blank" class="btn-primary" rel="noopener noreferrer">Lihat Proyek</a>
+          <a href="https://www.instagram.com/p/DKY6K_Mh9j6/?igsh=eHlqeWhjZXB5emp5"  class="btn-primary" rel="noopener noreferrer">Move to Instagram</a>
         </article>
       </div>
     </section>
 
      <section id="sertifikat" tabindex="-1" aria-label="Halaman sertifikat">
-      <h2>Sertifikat</h2>
+      <h2>Certificate</h2>
       <div class="projects-grid">
         <article class="project-card" tabindex="0" role="button" aria-expanded="false" aria-controls="pemrograman-web-slider" id="pemrograman-web-card">
           <h3 class="project-title">Sertifikat Course DICODING</h3>
@@ -419,22 +651,15 @@ section#kontak {
         </div>
       </div>
     </section>
-<!-- 
-    <!-- Modal pop-up untuk gambar Udemy, Task Manager, dan Laravel -->
-    <div id="imageModal" style="display:none; position:fixed; z-index:9999; top:0; left:0; width:100vw; height:100vh; background:rgba(0,0,0,0.8); justify-content:center; align-items:center; flex-direction:column;">
-      <button id="closeModal" type="button" style="position:absolute; top:20px; right:30px; background:#64b5f6; color:#08203a; border:none; border-radius:8px; padding:8px 16px; font-weight:bold; cursor:pointer;">Tutup ✕</button>
-      <img id="modalImg" src="" alt="Preview Sertifikat" style="max-width:90%; max-height:90%; border-radius:10px; box-shadow:0 0 20px #64b5f6;">
-    </div> -->
 
-    <!-- Modal Pop-up -->
-<div id="imageModal" style="display:none; position:fixed; z-index:9999; top:0; left:0; width:100vw; height:100vh; background:rgba(0,0,0,0.8); justify-content:center; align-items:center;">
-  <span id="closeModal" style="position:absolute; top:20px; right:30px; color:#fff; font-size:40px; cursor:pointer;">&times;</span>
-  <img id="modalImg" src="" style="max-width:90%; max-height:90%; border-radius:10px; box-shadow:0 0 20px #64b5f6;">
+<div id="imageModal">
+  <span id="closeModal">&times;</span>
+  <img id="modalImg" src="" alt="Preview Sertifikat">
 </div>
 
 
     <section id="kontak" tabindex="-1" aria-label="Halaman kontak">
-      <h2>Kontak</h2>
+      <h2>Contact</h2>
       <ul class="contact-list">
         <li>
           <a href="https://www.instagram.com/rrasyatn" target="_blank" rel="noopener" aria-label="Instagram saya">
@@ -455,38 +680,9 @@ section#kontak {
   <footer>
     &copy; Portofolio Rasya Tri Noviandika
   </footer>
+<script>
 
-  <script>
-
-       document.addEventListener('DOMContentLoaded', () => {
-      const modal = document.getElementById('imageModal');
-      const modalImg = document.getElementById('modalImg');
-      const closeModal = document.getElementById('closeModal');
-
-      document.querySelectorAll('#sertifikat img').forEach(img => {
-        img.style.cursor = 'zoom-in';
-        img.addEventListener ('click' , (e) => {
-          e.stopPropagation();
-          modalImg.src = img.src;
-          modal.style.display = 'flex';
-        });
-      });
-
-      closeModal.addEventListener('click', (e) => {
-    e.preventDefault();
-        modal.style.display = 'none';
-        modalImg.src = '';
-      });
-
-      modal.addEventListener('click', (e) => {
-        if (e.target === modal) {
-          modal.style.display = 'none';
-          modalImg.src = '';
-        }
-      });
-    });
-
-  document.addEventListener('DOMContentLoaded', () => {
+document.addEventListener('DOMContentLoaded', () => {
   const modal = document.getElementById('imageModal');
   const modalImg = document.getElementById('modalImg');
   const closeBtn = document.getElementById('closeModal');
@@ -494,6 +690,12 @@ section#kontak {
   document.querySelectorAll('#sertifikat img, #pemrograman-web-slider img').forEach(img => {
     img.style.cursor = 'zoom-in';
     img.addEventListener('click', () => {
+      // Reset ukuran gambar
+      modalImg.style.width = '';
+      modalImg.style.height = '';
+      modalImg.style.maxWidth = '90vw';
+      modalImg.style.maxHeight = '80vh';
+      modalImg.style.objectFit = 'contain';
       modalImg.src = img.src;
       modal.style.display = 'flex';
     });
@@ -511,7 +713,6 @@ section#kontak {
     }
   });
 });
-
 
     document.addEventListener('DOMContentLoaded', () => {
       // Smooth scroll for navbar links
@@ -574,6 +775,18 @@ section#kontak {
       });
     });
   </script>
+
+
+<script>
+document.addEventListener('DOMContentLoaded', () => {
+  const toggleBtn = document.getElementById('menuToggle');
+  const nav = document.getElementById('navMenu');
+
+  toggleBtn.addEventListener('click', () => {
+    nav.classList.toggle('active');
+  });
+});
+    </script>
 </body>
 </html>
 
