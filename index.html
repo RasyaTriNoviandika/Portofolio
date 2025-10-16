@@ -1,0 +1,273 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Developer Portfolio</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body class="scroll-smooth">
+    <!-- Navigation -->
+    <nav class="fixed w-full top-0 z-50 glass">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex items-center justify-between h-16">
+                <div class="text-2xl font-bold gradient-text">Portfolio</div>
+                
+                <!-- Desktop Menu -->
+                <div class="hidden md:flex space-x-8">
+                    <a href="#home" class="nav-link text-gray-300 hover:text-white">Home</a>
+                    <a href="#about" class="nav-link text-gray-300 hover:text-white">About</a>
+                    <a href="#skills" class="nav-link text-gray-300 hover:text-white">Skills</a>
+                    <a href="#projects" class="nav-link text-gray-300 hover:text-white">Projects</a>
+                    <a href="#contact" class="nav-link text-gray-300 hover:text-white">Contact</a>
+                </div>
+                
+                <!-- Mobile Hamburger Button -->
+                <button id="mobile-menu-btn" class="md:hidden text-white focus:outline-none">
+                    <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path id="hamburger-icon" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path>
+                        <path id="close-icon" class="hidden" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"></path>
+                    </svg>
+                </button>
+            </div>
+        </div>
+        
+        <!-- Mobile Menu -->
+        <div id="mobile-menu" class="md:hidden hidden">
+            <div class="px-2 pt-2 pb-3 space-y-1 glass-dark">
+                <a href="#home" class="mobile-menu-link block px-3 py-2 rounded-md text-base font-medium text-gray-300 hover:text-white hover:bg-gray-700 transition-colors">Home</a>
+                <a href="#about" class="mobile-menu-link block px-3 py-2 rounded-md text-base font-medium text-gray-300 hover:text-white hover:bg-gray-700 transition-colors">About</a>
+                <a href="#skills" class="mobile-menu-link block px-3 py-2 rounded-md text-base font-medium text-gray-300 hover:text-white hover:bg-gray-700 transition-colors">Skills</a>
+                <a href="#projects" class="mobile-menu-link block px-3 py-2 rounded-md text-base font-medium text-gray-300 hover:text-white hover:bg-gray-700 transition-colors">Projects</a>
+                <a href="#contact" class="mobile-menu-link block px-3 py-2 rounded-md text-base font-medium text-gray-300 hover:text-white hover:bg-gray-700 transition-colors">Contact</a>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section id="home" class="min-h-screen flex items-center justify-center relative overflow-hidden pt-16">
+        <div class="absolute inset-0 overflow-hidden">
+            <div class="absolute w-96 h-96 bg-purple-600 rounded-full filter blur-3xl opacity-20 -top-48 -left-48 float"></div>
+            <div class="absolute w-96 h-96 bg-blue-600 rounded-full filter blur-3xl opacity-20 -bottom-48 -right-48 float-delayed"></div>
+        </div>
+        
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center z-10">
+            <!-- Profile Photo -->
+            <div class="mb-8 flex justify-center">
+                <div class="profile-container">
+                    <img src="foto.jpg" alt="Profile Photo" class="profile-photo">
+                </div>
+            </div>
+            
+            <h1 class="text-5xl md:text-7xl font-bold mb-6">
+                Hi, I'm <span class="gradient-text">Rasya</span>
+            </h1>
+            <p class="text-xl md:text-2xl text-gray-400 mb-8">Junior Developer | SISWA SMKN9 BEKASI | SIJA </p>
+            <div class="flex flex-col sm:flex-row gap-4 justify-center">
+                <a href="#projects" class="px-8 py-3 bg-gradient-to-r from-purple-600 to-blue-600 rounded-full font-semibold hover:shadow-lg hover:shadow-purple-500/50 transition-all duration-300">
+                    View My Work
+                </a>
+                <a href="#contact" class="px-8 py-3 glass rounded-full font-semibold hover-lift">
+                    Contact Me
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section id="about" class="py-20 px-4 sm:px-6 lg:px-8">
+        <div class="max-w-7xl mx-auto">
+            <h2 class="text-4xl md:text-5xl font-bold text-center mb-16 gradient-text">About Me</h2>
+            <div class="grid md:grid-cols-2 gap-12 items-center">
+                <div class="glass rounded-2xl p-8 hover-lift">
+                    <h3 class="text-2xl font-bold mb-4">Who I am </h3>
+                    <p class="text-gray-400 leading-relaxed mb-4">
+                        Saya Rasya Tri Noviandika, siswa SMKN 9 Bekasi jurusan Sistem Informasi, Jaringan, dan Aplikasi (SIJA).
+                        Saya tertarik pada dunia teknologi, pemrograman, dan desain UI/UX.
+                        Saya senang mempelajari hal baru, cepat beradaptasi, dan selalu berusaha mengembangkan diri melalui berbagai proyek serta pengalaman belajar mandiri.
+                    </p>
+                </div>
+                <div class="glass rounded-2xl p-8 hover-lift">
+                    <h3 class="text-2xl font-bold mb-4">My Goals</h3>
+                    <ul class="space-y-3">
+                        <li class="flex items-start">
+                            <span class="text-purple-500 mr-2">▹</span>
+                            <span class="text-gray-400">Full Stack Web Development & Build Real-World Projects</span>
+                        </li>
+                        <li class="flex items-start">
+                            <span class="text-purple-500 mr-2">▹</span>
+                            <span class="text-gray-400">UI/UX Design & Prototyping</span>
+                        </li>
+                        <li class="flex items-start">
+                            <span class="text-purple-500 mr-2">▹</span>
+                            <span class="text-gray-400">Exploring Machine Learning & Data Analytics 
+                                                        in Cyber Security</span>
+                        </li>
+                        <li class="flex items-start">
+                            <span class="text-purple-500 mr-2">▹</span>
+                            <span class="text-gray-400">Digital Branding & TikTok Affiliate Marketing</span>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Skills Section -->
+    <section id="skills" class="py-20 px-4 sm:px-6 lg:px-8">
+        <div class="max-w-7xl mx-auto">
+            <h2 class="text-4xl md:text-5xl font-bold text-center mb-16 gradient-text">Skills & Technologies</h2>
+            <div class="grid grid-cols-2 md:grid-cols-4 lg:grid-cols-6 gap-6">
+                <div class="glass rounded-xl p-6 text-center hover-lift skill-badge">
+                    <div class="text-4xl mb-2"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/html5/html5-plain-wordmark.svg" alt="HTML5"></div>
+                    <div class="font-semibold">HTML</div>
+                </div>
+                <div class="glass rounded-xl p-6 text-center hover-lift skill-badge">
+                    <div class="text-4xl mb-2"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/php/php-original.svg" alt="PHP">
+                </div>
+                    <div class="font-semibold">PHP</div>
+                </div>
+                <div class="glass rounded-xl p-6 text-center hover-lift skill-badge">
+                    <div class="text-4xl mb-2"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/laravel/laravel-original.svg" alt="Laravel"> 
+                    </div>
+                    <div class="font-semibold">Laravel</div>
+                </div>
+                <div class="glass rounded-xl p-6 text-center hover-lift skill-badge">
+                    <div class="text-4xl mb-2"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/figma/figma-original.svg" alt="FIGMA"></div>
+                    <div class="font-semibold">Figma</div>
+                </div>
+                <div class="glass rounded-xl p-6 text-center hover-lift skill-badge">
+                    <div class="text-4xl mb-2"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/python/python-original.svg" alt="PYTHON"></div>
+                    <div class="font-semibold">Python</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Projects Section -->
+<section id="projects" class="py-20 px-4 sm:px-6 lg:px-8">
+  <div class="max-w-7xl mx-auto">
+    <h2 class="text-4xl md:text-5xl font-bold text-center mb-16 gradient-text">Projects</h2>
+
+    <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+      <!-- Project 1 -->
+      <div class="glass rounded-2xl overflow-hidden hover-lift project-card">
+        <div class="p-6 flex flex-col items-center">
+          <div class="rounded-3xl overflow-hidden shadow-lg hover:scale-105 transition-transform duration-500 bg-white">
+            <img src="uiux.png" alt="E-Commerce UI/UX" class="w-64 h-auto mx-auto">
+          </div>
+          <div class="text-left mt-6 w-full">
+            <h3 class="text-xl font-bold mb-2">E-Commerce UI/UX Marketplace Makanan</h3>
+            <p class="text-gray-400 mb-4">
+              Tugas Project dari Sekolah | Desain UI/UX marketplace makanan dengan tampilan modern & clean.
+            </p>
+            <div class="flex flex-wrap gap-2">
+              <span class="px-3 py-1 bg-purple-600/20 rounded-full text-sm">Figma</span>
+            </div>
+          </div>
+          <a href="https://www.instagram.com/p/DKY6K_Mh9j6/?igsh=eHlqeWhjZXB5emp5"
+             target="_blank"
+             rel="noopener noreferrer"
+             class="mt-4 px-6 py-2 bg-white text-purple-600 rounded-full font-semibold hover:bg-purple-100 transition">
+            View Project
+          </a>
+        </div>
+      </div>
+
+      <!-- Project 2 -->
+      <div class="glass rounded-2xl overflow-hidden hover-lift project-card">
+        <div class="p-6 flex flex-col items-center">
+          <div class="rounded-3xl overflow-hidden shadow-lg hover:scale-105 transition-transform duration-500 bg-white">
+            <img src="absen.png" alt="Absensi Wajah" class="w-64 h-auto mx-auto">
+          </div>
+          <div class="text-left mt-6 w-full">
+            <h3 class="text-xl font-bold mb-2">Teknologi Absensi Wajah</h3>
+            <p class="text-gray-400 mb-4">
+              Sistem absensi berbasis Python & AI yang telah digunakan di lingkungan sekolah.
+            </p>
+            <div class="flex flex-wrap gap-2">
+              <span class="px-3 py-1 bg-purple-600/20 rounded-full text-sm">Python</span>
+              <span class="px-3 py-1 bg-purple-600/20 rounded-full text-sm">Flask</span>
+            </div>
+          </div>
+          <a href="https://web-aca.up.railway.app/"
+             target="_blank"
+             rel="noopener noreferrer"
+             class="mt-4 px-6 py-2 bg-white text-purple-600 rounded-full font-semibold hover:bg-purple-100 transition">
+            View Project
+          </a>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="py-20 px-4 sm:px-6 lg:px-8 mb-20">
+        <div class="max-w-3xl mx-auto text-center">
+            <h2 class="text-4xl md:text-5xl font-bold mb-8 gradient-text">Let's Work Together</h2>
+            <p class="text-xl text-gray-400 mb-12">
+                Have a project in mind? Let's create something amazing together.
+            </p>
+            <div class="glass rounded-2xl p-8">
+                <form class="space-y-6">
+                    <div>
+                        <input type="text" placeholder="Your Name" class="w-full px-4 py-3 bg-white/5 border border-white/10 rounded-lg focus:outline-none focus:border-purple-500 transition-colors">
+                    </div>
+                    <div>
+                        <input type="email" placeholder="Your Email" class="w-full px-4 py-3 bg-white/5 border border-white/10 rounded-lg focus:outline-none focus:border-purple-500 transition-colors">
+                    </div>
+                    <div>
+                        <textarea placeholder="Your Message" rows="5" class="w-full px-4 py-3 bg-white/5 border border-white/10 rounded-lg focus:outline-none focus:border-purple-500 transition-colors resize-none"></textarea>
+                    </div>
+                    <button type="submit" class="w-full px-8 py-3 bg-gradient-to-r from-purple-600 to-blue-600 rounded-lg font-semibold hover:shadow-lg hover:shadow-purple-500/50 transition-all duration-300">
+                        Send Message
+                    </button>
+                </form>
+            </div>
+            
+             <div class="flex justify-center gap-6 mt-10">
+            <!-- Instagram -->
+            <a href="https://instagram.com/rrasyatn"
+                target="_blank" rel="noopener noreferrer"
+                class="relative group glass p-3 rounded-full hover:scale-110 transition">
+                <img src="https://cdn.jsdelivr.net/gh/simple-icons/simple-icons/icons/instagram.svg" alt="Instagram" class="w-6 h-6 invert group-hover:opacity-80 transition">
+                <span class="absolute bottom-[-30px] left-1/2 transform -translate-x-1/2 text-xs text-gray-300 opacity-0 group-hover:opacity-100 transition">Instagram</span>
+            </a>
+
+            <!-- LinkedIn -->
+            <a href="https://linkedin.com/in/rasyatrin"
+                target="_blank" rel="noopener noreferrer"
+                class="relative group glass p-3 rounded-full hover:scale-110 transition">
+                <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/linkedin/linkedin-original.svg" alt="LinkedIn" class="w-6 h-6 group-hover:opacity-80 transition">
+                <span class="absolute bottom-[-30px] left-1/2 transform -translate-x-1/2 text-xs text-gray-300 opacity-0 group-hover:opacity-100 transition">LinkedIn</span>
+            </a>
+
+            <!-- GitHub -->
+            <a href="https://github.com/RasyaTriNoviandika"
+                target="_blank" rel="noopener noreferrer"
+                class="relative group glass p-3 rounded-full hover:scale-110 transition">
+                <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/github/github-original.svg" alt="GitHub" class="w-6 h-6 invert group-hover:opacity-80 transition">
+                <span class="absolute bottom-[-30px] left-1/2 transform -translate-x-1/2 text-xs text-gray-300 opacity-0 group-hover:opacity-100 transition">GitHub</span>
+            </a>
+
+            <!-- TikTok -->
+            <a href="https://tiktok.com/@rasyaa.tn"
+                target="_blank" rel="noopener noreferrer"
+                class="relative group glass p-3 rounded-full hover:scale-110 transition">
+                <img src="https://cdn.jsdelivr.net/gh/simple-icons/simple-icons/icons/tiktok.svg" alt="TikTok" class="w-6 h-6 invert group-hover:opacity-80 transition">
+                <span class="absolute bottom-[-30px] left-1/2 transform -translate-x-1/2 text-xs text-gray-300 opacity-0 group-hover:opacity-100 transition">TikTok</span>
+            </a>
+            </div>
+            </div>
+            </section>
+
+    <!-- Footer -->
+    <footer class="py-8 text-center text-gray-400 border-t border-white/10">
+        <p>© 2025 Rasya Tri Noviandika | Portfolio</p>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>
