@@ -1,3 +1,5 @@
+
+
 // Mobile Menu Toggle
 const mobileMenuBtn = document.getElementById('mobile-menu-btn');
 const mobileMenu = document.getElementById('mobile-menu');
@@ -85,3 +87,25 @@ if (contactForm) {
         contactForm.reset();
     });
 }
+// === Lightbox Certificate ===
+const modal = document.getElementById('certificate-modal');
+const modalImage = document.getElementById('modal-image');
+const closeModal = document.getElementById('close-modal');
+
+document.querySelectorAll('.view-certificate').forEach(button => {
+  button.addEventListener('click', () => {
+    const imgSrc = button.getAttribute('data-img');
+    modalImage.src = imgSrc;
+    modal.classList.add('active');
+  });
+});
+
+closeModal.addEventListener('click', () => {
+  modal.classList.remove('active');
+});
+
+modal.addEventListener('click', (e) => {
+  if (e.target === modal) {
+    modal.classList.remove('active');
+  }
+});
